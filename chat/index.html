@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC Text Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Connection Status -->
+        <div class="status-bar">
+            <div class="status-indicator" id="statusIndicator"></div>
+            <div class="status-text">
+                <input id="peerNameInput" class="peer-name-input" type="text" placeholder="Your name" />
+                <span id="peerId" class="peer-id"></span>
+            </div>
+            <input id="bgUpload" type="file" accept="image/*" style="margin-left:20px;" placeholder="Upload background image" />
+            <button id="changeRoomBtn" class="btn-room" style="margin-left:10px;">Change Room</button>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-main">
+            <!-- Chat Window -->
+            <div class="chat-window" style="width:100%;">
+                <div class="messages-container" id="messagesContainer"></div>
+                <div class="input-area">
+                    <input 
+                        type="text" 
+                        id="messageInput" 
+                        placeholder="Type a message..." 
+                        disabled
+                    >
+                    <button id="sendBtn" class="btn-send" disabled>Send</button>
+                </div>
+                <!-- Manual refresh button will be injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
